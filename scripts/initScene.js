@@ -74,7 +74,7 @@
     //		})
     //	);
 
-        skydome = new Skydome("skydomes/room.jpg");
+        skydome = new Skydome("skydomes/skydome.jpg");
       	skydome.rotation.y = Math.PI;
       	skydome.scale.set(-1, 2, 1);
       	scene.add( skydome );
