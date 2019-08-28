@@ -73,6 +73,7 @@
     //			side: THREE.DoubleSide
     //		})
     //	);
+
         skydome = new Skydome("/skydomes/skydome.jpg");
       	skydome.rotation.y = Math.PI;
       	skydome.scale.set(-1, 2, 1);
