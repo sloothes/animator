@@ -63,16 +63,17 @@
         scene.add(groundHelper);
 
 	//  Skydome.
-	
+/*
     //  var loader = new THREE.TextureLoader();
-    //	skydome = new THREE.Mesh(
-    //		new THREE.SphereGeometry( far * 0.1, 15, 15 ),
+    //  skydome = new THREE.Mesh(
+    //      new THREE.SphereGeometry( far * 0.1, 15, 15 ),
     //		new THREE.MeshBasicMaterial({
-    //			map: loader.load( "/skydomes/skydome.jpg" ),
-    //			color: 0xffffff,
+    //          map: loader.load( "/skydomes/skydome.jpg" ),
+    //          color: 0xffffff,
     //			side: THREE.DoubleSide
     //		})
     //	);
+*/
 
     //  skydome = new Skydome("skydomes/skydome.jpg");
     //	skydome.rotation.y = Math.PI;
@@ -84,6 +85,7 @@
         axisOriginHelper = new OriginAxisHelper(1000);
 
     //  Floor.
+/*
     //  var material = new THREE.MeshLambertMaterial( { color:0x8888ff, side:THREE.DoubleSide } );
     //  floorPlain = new THREE.Mesh( new THREE.PlaneGeometry( 50, 50, 1, 1 ), material );
     //  floorPlain.position.set( 0, 0, 0 );
@@ -92,7 +94,7 @@
 
     //  Keyboard controls.
     //  keyboard = new KeyboardState();
-
+*/
     //  Clock.
         clock = new THREE.Clock();
 
@@ -101,14 +103,23 @@
             antialias:true, 
             preserveDrawingBuffer:true // (for taking canvas png snapshots)
         });
+
         renderer.autoClear = true;
         renderer.shadowMap.enabled = true;
-		renderer.setPixelRatio( window.devicePixelRatio );
-		renderer.setSize( window.innerWidth, window.innerHeight ); 
-		animatorContainer.appendChild( renderer.domElement );
+        renderer.setPixelRatio( window.devicePixelRatio );
+        renderer.setSize( window.innerWidth, window.innerHeight ); 
+        animatorContainer.appendChild( renderer.domElement );
         
     //  Manny The Skeleton Rigged Mesh.
         loadSkinnedAnimatedMesh( meshPath, 1 );
+
+        renderer.domElement.addEventListener("mouseenter", function(){
+            controls.enabled = true;
+        });
+
+        renderer.domElement.addEventListener("mouseleave", function(){
+            controls.enabled = false;
+        });
 
     })();
 
