@@ -96,7 +96,7 @@
     //  keyboard = new KeyboardState();
 */
     //  Clock.
-        clock = new THREE.Clock();
+    //  clock = new THREE.Clock();
 
     //  Renderer.
         renderer = new THREE.WebGLRenderer({ 

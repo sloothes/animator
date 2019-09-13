@@ -1,6 +1,7 @@
 //  loadSkinnedAnimatedMesh.js
 
     function loadSkinnedAnimatedMesh(url, scale){
+        if ( scale == undefined ) scale = 1.0;
     //  Remove old avatar from scene.
         if (avatar) scene.remove(avatar);
     //  Remove old armature helper.

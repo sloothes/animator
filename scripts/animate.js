@@ -1,5 +1,6 @@
 // animate.js
 
+    var clock = new THREE.Clock();
 
     function animate(){
         requestAnimationFrame( animate );
