@@ -109,7 +109,7 @@
     
     			} else {
     
-    				material = new THREE.MeshPhongMaterial();
+    				material = new THREE.MeshStandardMaterial({skinning:true});
     
     			}
     
