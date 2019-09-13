@@ -137,219 +137,219 @@
                             <a id="import-bvh-button" class="btn btn-white btn-white-outline">Import BVH</a>
                             <input type="file" id="load-bvh-input" style="display:none;">
 
-</div>
+                        </div>
 
-<div class="btn-holder" id="import-skinned-holder">
-<a id="import-skinned-button" class="btn btn-white btn-white-outline">Import Skinned</a>
-<input type="file" id="read-skinned" style="display:none;">
-</div>
-</div>
+                        <div class="btn-holder" id="import-skinned-holder">
+                            <a id="import-skinned-button" class="btn btn-white btn-white-outline">Import Skinned</a>
+                            <input type="file" id="read-skinned" style="display:none;">
+                        </div>
+                    </div>
 
-<div class="expo-buttons-row">
-    <div class="btn-holder" id="import-pose-holder">
-        <a id="import-pose-button" class="btn btn-white btn-white-outline">Import Pose</a>
-        <input type="file" id="read-pose" style="display:none;">
+                    <div class="expo-buttons-row">
+                        <div class="btn-holder" id="import-pose-holder">
+                            <a id="import-pose-button" class="btn btn-white btn-white-outline">Import Pose</a>
+                            <input type="file" id="read-pose" style="display:none;">
 
 
-</div>
+                        </div>
 
-<div class="btn-holder" id="import-anim-holder">
-<a id="import-animation-button" class="btn btn-white btn-white-outline">Import Animation</a>
-<input type="file" id="read-animation" style="display:none;">
-</div>
-</div>
-</div>
+                        <div class="btn-holder" id="import-anim-holder">
+                            <a id="import-animation-button" class="btn btn-white btn-white-outline">Import Animation</a>
+                            <input type="file" id="read-animation" style="display:none;">
+                        </div>
+                    </div>
+                </div>
 
-<div id="exports-holder">
-    <div class="slider-row" style="font-size:1.3em; margin-top:15px; margin-bottom:15px;">Export:</div>
-    <div class="expo-buttons-row">
-        <div class="btn-holder" id="export-pose-holder">
-            <a id="export-pose-data" class="btn btn-white btn-white-outline">Export Pose</a>
-</div>
+                <div id="exports-holder">
+                    <div class="slider-row" style="font-size:1.3em; margin-top:15px; margin-bottom:15px;">Export:</div>
+                    <div class="expo-buttons-row">
+                        <div class="btn-holder" id="export-pose-holder">
+                            <a id="export-pose-data" class="btn btn-white btn-white-outline">Export Pose</a>
+                        </div>
 
-<div class="btn-holder" id="export-anim-holder">
-<a id="export-animation-data" class="btn btn-white btn-white-outline">Export Data</a>
-</div>
-</div>
-</div>
+                        <div class="btn-holder" id="export-anim-holder">
+                            <a id="export-animation-data" class="btn btn-white btn-white-outline">Export Data</a>
+                        </div>
+                    </div>
+                </div>
 
-<div id="options-holder">
-    <div class="slider-row" style="font-size:1.3em; margin-top:15px; margin-bottom:15px;">Play Options:
-        <div class="slider-row" style="font-size:0.75em; margin-top:1em; margin-bottom:1em;">Loop:
-            <input type="checkbox" id="animation-loop" name="loop" checked="true" title="loop">
-        </div>
-        <div class="slider-row" style="font-size:0.75em; margin-bottom:1em;">Manual autoplay:
-            <input type="checkbox" id="manual-play" name="manualplay" checked="" title="If checked, animation autoplay at mouse buttons pressed down.">
-        </div>
-        <div class="slider-row" style="font-size:0.75em; margin-bottom:1em;">Hidden helpers:
-            <input type="checkbox" id="hidden-helpers" name="hiddenhelpers" checked="" title="If checked, ground helpers are not visible at play time.">
+                <div id="options-holder">
+                    <div class="slider-row" style="font-size:1.3em; margin-top:15px; margin-bottom:15px;">Play Options:
+                        <div class="slider-row" style="font-size:0.75em; margin-top:1em; margin-bottom:1em;">Loop:
+                            <input type="checkbox" id="animation-loop" name="loop" checked="true" title="loop">
+                        </div>
+                        <div class="slider-row" style="font-size:0.75em; margin-bottom:1em;">Manual autoplay:
+                            <input type="checkbox" id="manual-play" name="manualplay" checked="" title="If checked, animation autoplay at mouse buttons pressed down.">
+                        </div>
+                        <div class="slider-row" style="font-size:0.75em; margin-bottom:1em;">Hidden helpers:
+                            <input type="checkbox" id="hidden-helpers" name="hiddenhelpers" checked="" title="If checked, ground helpers are not visible at play time.">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </div>
     </div>
-</div>
-
-</div>
-</div>
-</div>
 
     <!-- RIGHT PANEL -->
 
-<div id="right-side">
-<div id="right-side-pinbtn" title="click this to pin/unpin panel"></div>
+    <div id="right-side">
+        <div id="right-side-pinbtn" title="click this to pin/unpin panel"></div>
 
-<div id="right-side-content">
+        <div id="right-side-content">
 
-<div id="outfit-editor-right-panel">
+            <div id="outfit-editor-right-panel">
 
-<div id="bones-holder">
-<style>
-    #select-bones { position:absolute; left:150px; width:150px; font-size:15px; color:#000000; }
-    #bone-label { position:absolute; left:0px; right:0px; top:0px; font-size:1.3em; text-align:center; }
-    #bone-label-slider { font-size:1em; margin-bottom:15px; }
-    #current-bone-select { padding-bottom:13px; } 
-    #bone-divider { margin-bottom:15px; }
-</style>
+                <div id="bones-holder">
+                    <style>
+                        #select-bones { position:absolute; left:150px; width:150px; font-size:15px; color:#000000; }
+                        #bone-label { position:absolute; left:0px; right:0px; top:0px; font-size:1.3em; text-align:center; }
+                        #bone-label-slider { font-size:1em; margin-bottom:15px; }
+                        #current-bone-select { padding-bottom:13px; } 
+                        #bone-divider { margin-bottom:15px; }
+                    </style>
 
-<div id="bone-label-slider" class="slider-row">
-    <div id="bone-label">Bone:&nbsp;<span id="bone-label-selected-name">Hips</span></div>
-</div>
+                    <div id="bone-label-slider" class="slider-row">
+                        <div id="bone-label">Bone:&nbsp;<span id="bone-label-selected-name">Hips</span></div>
+                    </div>
 
-<div id="current-bone-select" class="control-container">
-    <label for="select-bones" id="select-label">Selected Bone:</label>
-    <select id="select-bones" name="BONES" size="1"><option value="Hips">Hips</option><option value="LHipJoint">LHipJoint</option><option value="LeftUpLeg">LeftUpLeg</option><option value="LeftLeg">LeftLeg</option><option value="LeftFoot">LeftFoot</option><option value="LeftToeBase">LeftToeBase</option><option value="RHipJoint">RHipJoint</option><option value="RightUpLeg">RightUpLeg</option><option value="RightLeg">RightLeg</option><option value="RightFoot">RightFoot</option><option value="RightToeBase">RightToeBase</option><option value="LowerBack">LowerBack</option><option value="Spine">Spine</option><option value="Spine1">Spine1</option><option value="Neck">Neck</option><option value="Neck1">Neck1</option><option value="Head">Head</option><option value="LeftShoulder">LeftShoulder</option><option value="LeftArm">LeftArm</option><option value="LeftForeArm">LeftForeArm</option><option value="LeftHand">LeftHand</option><option value="LeftFingerBase">LeftFingerBase</option><option value="LeftHandIndex1">LeftHandIndex1</option><option value="LThumb">LThumb</option><option value="RightShoulder">RightShoulder</option><option value="RightArm">RightArm</option><option value="RightForeArm">RightForeArm</option><option value="RightHand">RightHand</option><option value="RightFingerBase">RightFingerBase</option><option value="RightHandIndex1">RightHandIndex1</option><option value="RThumb">RThumb</option></select>
-</div>
+                    <div id="current-bone-select" class="control-container">
+                        <label for="select-bones" id="select-label">Selected Bone:</label>
+                        <select id="select-bones" name="BONES" size="1"><option value="Hips">Hips</option><option value="LHipJoint">LHipJoint</option><option value="LeftUpLeg">LeftUpLeg</option><option value="LeftLeg">LeftLeg</option><option value="LeftFoot">LeftFoot</option><option value="LeftToeBase">LeftToeBase</option><option value="RHipJoint">RHipJoint</option><option value="RightUpLeg">RightUpLeg</option><option value="RightLeg">RightLeg</option><option value="RightFoot">RightFoot</option><option value="RightToeBase">RightToeBase</option><option value="LowerBack">LowerBack</option><option value="Spine">Spine</option><option value="Spine1">Spine1</option><option value="Neck">Neck</option><option value="Neck1">Neck1</option><option value="Head">Head</option><option value="LeftShoulder">LeftShoulder</option><option value="LeftArm">LeftArm</option><option value="LeftForeArm">LeftForeArm</option><option value="LeftHand">LeftHand</option><option value="LeftFingerBase">LeftFingerBase</option><option value="LeftHandIndex1">LeftHandIndex1</option><option value="LThumb">LThumb</option><option value="RightShoulder">RightShoulder</option><option value="RightArm">RightArm</option><option value="RightForeArm">RightForeArm</option><option value="RightHand">RightHand</option><option value="RightFingerBase">RightFingerBase</option><option value="RightHandIndex1">RightHandIndex1</option><option value="RThumb">RThumb</option></select>
+                    </div>
 
-<div id="bone-divider" class="reset-container"></div>
-</div>
+                    <div id="bone-divider" class="reset-container"></div>
+                </div>
 
-<div id="position-holder">
-<div id="position-sliders" class="control-container">
-    <div class="slider-row">
-        <label for="slider-pos-x" id="label-pos-x" class="dynamic-label">position&nbsp;<strong>x:</strong></label>
-        <input type="range" id="slider-pos-x" class="dynamic-slider" min="-1" max="1" value="0" step="0.01">
-        <input type="number" id="output-pos-x" class="dynamic-output position-output" value="0" step="0.1">
+                <div id="position-holder">
+                    <div id="position-sliders" class="control-container">
+                        <div class="slider-row">
+                            <label for="slider-pos-x" id="label-pos-x" class="dynamic-label">position&nbsp;<strong>x:</strong></label>
+                            <input type="range" id="slider-pos-x" class="dynamic-slider" min="-1" max="1" value="0" step="0.01">
+                            <input type="number" id="output-pos-x" class="dynamic-output position-output" value="0" step="0.1">
+                        </div>
+                        <div class="slider-row">
+                            <label for="slider-pos-y" id="label-pos-y" class="dynamic-label">position&nbsp;<strong>y:</strong></label>
+                            <input type="range" id="slider-pos-y" class="dynamic-slider" min="-1" max="1" value="0" step="0.01">
+                            <input type="number" id="output-pos-y" class="dynamic-output position-output" value="0" step="0.1">
+                        </div>
+                        <div class="slider-row">
+                            <label for="slider-pos-z" id="label-pos-z" class="dynamic-label">position&nbsp;<strong>z:</strong></label>
+                            <input type="range" id="slider-pos-z" class="dynamic-slider" min="-1" max="1" value="0" step="0.01">
+                            <input type="number" id="output-pos-z" class="dynamic-output position-output" value="0" step="0.1">
+                        </div>
+                    </div>
+
+                    <li class="reset-container">
+                        <a><span id="reset-position">Reset bones position</span></a>
+                    </li>
+                </div>
+
+                <div id="rotation-holder">
+                    <div id="rotation-sliders" class="control-container">
+                        <div class="slider-row">
+                            <label for="slider-rot-x" id="label-rot-x" class="dynamic-label">rotation&nbsp;<strong>x:</strong></label>
+                            <input type="range" id="slider-rot-x" class="dynamic-slider" min="-180" max="180" value="0" step="1">
+                            <input type="number" id="output-rot-x" class="dynamic-output rotation-output" min="-180" max="180" value="0" step="1">
+                        </div>
+                        <div class="slider-row">
+                            <label for="slider-rot-y" id="label-rot-y" class="dynamic-label">rotation&nbsp;<strong>y:</strong></label>
+                            <input type="range" id="slider-rot-y" class="dynamic-slider" min="-180" max="180" value="0" step="1">
+                            <input type="number" id="output-rot-y" class="dynamic-output rotation-output" min="-180" max="180" value="0" step="1">
+                        </div>
+                        <div class="slider-row">
+                            <label for="slider-rot-z" id="label-rot-z" class="dynamic-label">rotation&nbsp;<strong>z:</strong></label>
+                            <input type="range" id="slider-rot-z" class="dynamic-slider" min="-180" max="180" value="0" step="1">
+                            <input type="number" id="output-rot-z" class="dynamic-output rotation-output" min="-180" max="180" value="0" step="1">
+                        </div>
+                    </div>
+
+                    <li class="reset-container">
+                        <a><span id="reset-rotation">Reset bones rotation</span></a>
+                    </li>
+                </div>
+
+                <div id="scale-holder">
+                    <style>
+                        span.push-right  { position:absolute; right:20px; }    
+                        #keep-ratio     { vertical-align:middle; }
+                    </style>
+
+                    <div class="control-container">
+                        <div class="slider-row">
+                            <label for="slider-scale-uniform" class="dynamic-label">Scale <strong>xyz</strong></label>
+                            <input type="range" id="slider-scale-uniform" class="dynamic-slider" min="0.99" max="1.01" value="1" step="0.001">
+                            <input type="number" id="output-scale-uniform" class="dynamic-output uniform-scale-output" value="0" step="0.1">
+                        </div>
+                    </div>
+
+                    <li class="reset-container">
+                        <a><span id="reset-scale">Reset bones scale</span></a>
+                        <span id="scale-ratio" class="push-right">
+                            Keep&nbsp;scale&nbsp;ratio&nbsp;<input type="checkbox" id="keep-ratio" title="keep scale ratio">
+                        </span>
+                    </li>
+
+                    <div id="scale-sliders" class="control-container">
+                        <div class="slider-row">
+                            <label for="slider-scl-x" id="label-scl-x" class="dynamic-label">scale&nbsp;<strong>x:</strong></label>
+                            <input type="range" id="slider-scl-x" class="dynamic-slider" min="0.99" max="1.01" value="1" step="0.001">
+                            <input type="number" id="output-scl-x" class="dynamic-output scale-output" value="1" step="0.1">
+                        </div>
+                        <div class="slider-row">
+                            <label for="slider-scl-y" id="label-scl-y" class="dynamic-label">scale&nbsp;<strong>y:</strong></label>
+                            <input type="range" id="slider-scl-y" class="dynamic-slider" min="0.99" max="1.01" value="1" step="0.001">
+                            <input type="number" id="output-scl-y" class="dynamic-output scale-output" value="1" step="0.1">
+                        </div>
+                        <div class="slider-row">
+                            <label for="slider-scl-z" id="label-scl-z" class="dynamic-label">scale&nbsp;<strong>z:</strong></label>
+                            <input type="range" id="slider-scl-z" class="dynamic-slider" min="0.99" max="1.01" value="1" step="0.001">
+                            <input type="number" id="output-scl-z" class="dynamic-output scale-output" value="1" step="0.1">
+                        </div>
+                    </div>
+
+                    <div class="reset-container"></div>
+                </div>
+
+                <div id="settings-holder">
+                    <style>
+                        #animation-name { margin-left:22%; font-family:Arial, sans-serif; font-size:12px; width:75%; color:black;}
+                    </style>
+                    <div id="animation-options" class="control-container">
+                        <div class="slider-row">
+                            <label for="slider-dur" class="dynamic-label">Duration&nbsp;<strong>:</strong></label>
+                            <input type="range" id="slider-dur" class="dynamic-slider" min="-0.1" max="0.1" value="0" step="0.01">
+                            <input type="number" id="output-dur" value="3" class="dynamic-output" min="1" max="10" step="0.1">
+                        </div>
+                        <div class="slider-row">
+                            <label for="scl-time-slider" class="dynamic-label">Speed</label>
+                            <input type="range" id="slider-timescale" class="dynamic-slider" min="0" max="2" value="0" step="0.1">
+                            <input type="number" id="output-timescale" value="0" class="dynamic-output" step="0.1">
+                        </div>
+                        <div class="slider-row">
+                            <label for="slider-fps" class="dynamic-label">Fps</label>
+                            <input type="range" id="slider-fps" class="dynamic-slider" min="0" max="60" value="25" step="1">
+                            <input type="number" id="output-fps" value="25" class="dynamic-output" step="1">
+                        </div>
+                        <div class="slider-row">
+                            <label for="animation-name" class="dynamic-label">Name:<strong></strong></label>
+                            <input type="text" id="animation-name" maxlength="128" placeholder="animation name">
+                        </div>
+                    </div>
+
+                    <style>
+                        .helper { width:33%; padding-right:10px; }
+                    </style>
+                    <div class="reset-container">
+                        <li><a class="helper"><span id="avatar-helper">Hide Avatar</span></a></li>
+                        <li><a class="helper"><span id="bones-helper">Show Bones</span></a></li>
+                        <li><a class="helper"><span id="reset-pose">Rest Pose</span></a></li>
+                        <li><a class="helper"><span id="remove-keys">Remove Keymarks</span></a></li>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="slider-row">
-        <label for="slider-pos-y" id="label-pos-y" class="dynamic-label">position&nbsp;<strong>y:</strong></label>
-        <input type="range" id="slider-pos-y" class="dynamic-slider" min="-1" max="1" value="0" step="0.01">
-        <input type="number" id="output-pos-y" class="dynamic-output position-output" value="0" step="0.1">
-    </div>
-    <div class="slider-row">
-        <label for="slider-pos-z" id="label-pos-z" class="dynamic-label">position&nbsp;<strong>z:</strong></label>
-        <input type="range" id="slider-pos-z" class="dynamic-slider" min="-1" max="1" value="0" step="0.01">
-        <input type="number" id="output-pos-z" class="dynamic-output position-output" value="0" step="0.1">
-    </div>
-</div>
-
-<li class="reset-container">
-    <a><span id="reset-position">Reset bones position</span></a>
-</li>
-</div>
-
-<div id="rotation-holder">
-<div id="rotation-sliders" class="control-container">
-    <div class="slider-row">
-        <label for="slider-rot-x" id="label-rot-x" class="dynamic-label">rotation&nbsp;<strong>x:</strong></label>
-        <input type="range" id="slider-rot-x" class="dynamic-slider" min="-180" max="180" value="0" step="1">
-        <input type="number" id="output-rot-x" class="dynamic-output rotation-output" min="-180" max="180" value="0" step="1">
-    </div>
-    <div class="slider-row">
-        <label for="slider-rot-y" id="label-rot-y" class="dynamic-label">rotation&nbsp;<strong>y:</strong></label>
-        <input type="range" id="slider-rot-y" class="dynamic-slider" min="-180" max="180" value="0" step="1">
-        <input type="number" id="output-rot-y" class="dynamic-output rotation-output" min="-180" max="180" value="0" step="1">
-    </div>
-    <div class="slider-row">
-        <label for="slider-rot-z" id="label-rot-z" class="dynamic-label">rotation&nbsp;<strong>z:</strong></label>
-        <input type="range" id="slider-rot-z" class="dynamic-slider" min="-180" max="180" value="0" step="1">
-        <input type="number" id="output-rot-z" class="dynamic-output rotation-output" min="-180" max="180" value="0" step="1">
-    </div>
-</div>
-
-<li class="reset-container">
-    <a><span id="reset-rotation">Reset bones rotation</span></a>
-</li>
-</div>
-
-<div id="scale-holder">
-<style>
-    span.push-right  { position:absolute; right:20px; }    
-    #keep-ratio     { vertical-align:middle; }
-</style>
-
-<div class="control-container">
-    <div class="slider-row">
-        <label for="slider-scale-uniform" class="dynamic-label">Scale <strong>xyz</strong></label>
-        <input type="range" id="slider-scale-uniform" class="dynamic-slider" min="0.99" max="1.01" value="1" step="0.001">
-        <input type="number" id="output-scale-uniform" class="dynamic-output uniform-scale-output" value="0" step="0.1">
-    </div>
-</div>
-
-<li class="reset-container">
-    <a><span id="reset-scale">Reset bones scale</span></a>
-    <span id="scale-ratio" class="push-right">
-        Keep&nbsp;scale&nbsp;ratio&nbsp;<input type="checkbox" id="keep-ratio" title="keep scale ratio">
-    </span>
-</li>
-
-<div id="scale-sliders" class="control-container">
-    <div class="slider-row">
-        <label for="slider-scl-x" id="label-scl-x" class="dynamic-label">scale&nbsp;<strong>x:</strong></label>
-        <input type="range" id="slider-scl-x" class="dynamic-slider" min="0.99" max="1.01" value="1" step="0.001">
-        <input type="number" id="output-scl-x" class="dynamic-output scale-output" value="1" step="0.1">
-    </div>
-    <div class="slider-row">
-        <label for="slider-scl-y" id="label-scl-y" class="dynamic-label">scale&nbsp;<strong>y:</strong></label>
-        <input type="range" id="slider-scl-y" class="dynamic-slider" min="0.99" max="1.01" value="1" step="0.001">
-        <input type="number" id="output-scl-y" class="dynamic-output scale-output" value="1" step="0.1">
-    </div>
-    <div class="slider-row">
-        <label for="slider-scl-z" id="label-scl-z" class="dynamic-label">scale&nbsp;<strong>z:</strong></label>
-        <input type="range" id="slider-scl-z" class="dynamic-slider" min="0.99" max="1.01" value="1" step="0.001">
-        <input type="number" id="output-scl-z" class="dynamic-output scale-output" value="1" step="0.1">
-    </div>
-</div>
-
-<div class="reset-container"></div>
-</div>
-
-<div id="settings-holder">
-<style>
-    #animation-name { margin-left:22%; font-family:Arial, sans-serif; font-size:12px; width:75%; color:black;}
-</style>
-<div id="animation-options" class="control-container">
-    <div class="slider-row">
-        <label for="slider-dur" class="dynamic-label">Duration&nbsp;<strong>:</strong></label>
-        <input type="range" id="slider-dur" class="dynamic-slider" min="-0.1" max="0.1" value="0" step="0.01">
-        <input type="number" id="output-dur" value="3" class="dynamic-output" min="1" max="10" step="0.1">
-    </div>
-    <div class="slider-row">
-        <label for="scl-time-slider" class="dynamic-label">Speed</label>
-        <input type="range" id="slider-timescale" class="dynamic-slider" min="0" max="2" value="0" step="0.1">
-        <input type="number" id="output-timescale" value="0" class="dynamic-output" step="0.1">
-    </div>
-    <div class="slider-row">
-        <label for="slider-fps" class="dynamic-label">Fps</label>
-        <input type="range" id="slider-fps" class="dynamic-slider" min="0" max="60" value="25" step="1">
-        <input type="number" id="output-fps" value="25" class="dynamic-output" step="1">
-    </div>
-    <div class="slider-row">
-        <label for="animation-name" class="dynamic-label">Name:<strong></strong></label>
-        <input type="text" id="animation-name" maxlength="128" placeholder="animation name">
-    </div>
-</div>
-
-<style>
-    .helper { width:33%; padding-right:10px; }
-</style>
-<div class="reset-container">
-    <li><a class="helper"><span id="avatar-helper">Hide Avatar</span></a></li>
-    <li><a class="helper"><span id="bones-helper">Show Bones</span></a></li>
-    <li><a class="helper"><span id="reset-pose">Rest Pose</span></a></li>
-    <li><a class="helper"><span id="remove-keys">Remove Keymarks</span></a></li>
-</div>
-</div>
-</div>
-</div>
-</div>
 
 </section>
 

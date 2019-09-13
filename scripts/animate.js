@@ -1,6 +1,19 @@
 // animate.js
 
     var clock = new THREE.Clock();
+    var animatorContainer = $(sceneContainerSelector)[0];
+
+//  Renderer.
+    renderer = new THREE.WebGLRenderer({ 
+        antialias:true, 
+        preserveDrawingBuffer:true // (for taking canvas png snapshots)
+    });
+
+    renderer.autoClear = true;
+    renderer.shadowMap.enabled = true;
+    renderer.setPixelRatio( window.devicePixelRatio );
+    renderer.setSize( window.innerWidth, window.innerHeight ); 
+    animatorContainer.appendChild( renderer.domElement );
 
     function animate(){
         requestAnimationFrame( animate );

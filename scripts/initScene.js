@@ -97,7 +97,7 @@
 */
     //  Clock.
     //  clock = new THREE.Clock();
-
+/*
     //  Renderer.
         renderer = new THREE.WebGLRenderer({ 
             antialias:true, 
@@ -109,7 +109,7 @@
         renderer.setPixelRatio( window.devicePixelRatio );
         renderer.setSize( window.innerWidth, window.innerHeight ); 
         animatorContainer.appendChild( renderer.domElement );
-        
+*/
     //  Manny The Skeleton Rigged Mesh.
         loadSkinnedAnimatedMesh( meshPath, 1 );
 
