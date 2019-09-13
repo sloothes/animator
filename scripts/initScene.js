@@ -113,14 +113,6 @@
     //  Manny The Skeleton Rigged Mesh.
         loadSkinnedAnimatedMesh( meshPath, 1 );
 
-        renderer.domElement.addEventListener("mouseenter", function(){
-            controls.enabled = true;
-        });
-
-        renderer.domElement.addEventListener("mouseleave", function(){
-            controls.enabled = false;
-        });
-
     })();
 
 /*

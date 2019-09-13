@@ -15,6 +15,14 @@
     renderer.setSize( window.innerWidth, window.innerHeight ); 
     animatorContainer.appendChild( renderer.domElement );
 
+    renderer.domElement.addEventListener("mouseenter", function(){
+        controls.enabled = true;
+    });
+
+    renderer.domElement.addEventListener("mouseleave", function(){
+        controls.enabled = false;
+    });
+
     function animate(){
         requestAnimationFrame( animate );
         update();
