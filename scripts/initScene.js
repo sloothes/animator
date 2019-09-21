@@ -51,7 +51,7 @@
         scene.add(light0, light1, light2, light3, light4);
 
     //  Controls.
-        controls = new THREE.EditorControls(camera);
+        controls = new THREE.EditorControls(camera, container);
         controls.center.y = 15;
         camera.lookAt( controls.center );
 
