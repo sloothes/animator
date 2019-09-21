@@ -33,7 +33,7 @@
         height:100%; padding-top:0px; padding-bottom:0px; 
         background-color:rgba(0,0,0,1); overflow:hidden; 
     }
-    #render-container { height:100%; opacity:1; background-color:rgb(0,0,0); }
+    #render-container { position:fixed;top:0;left:0;bottom:0;right:0;opacity:1;background-color:rgb(0,0,0);overflow:hidden; }
 </style>
 
 
@@ -64,7 +64,7 @@
         background:url("img/detach-close-icon.png") 50% 50% / contain no-repeat rgba(255, 255, 255, 0); 
     }
     #pin-tip  { position:absolute; max-width:180; max-height:20px; top:5px; left:-170px; text-align:left; overflow:hidden;  z-index:1000;}
-    #left-side-content, #right-side-content { top:20px; bottom:20px; overflow-y:auto; }
+    #left-side-content, #right-side-content { top:20px; bottom:120px; overflow-y:auto; }
     .nav-btn + .nav-btn { padding-left: 1rem; }
     .scroll-control-left {left:5px;}
     .scroll-control-right {right:30px;}
@@ -355,7 +355,7 @@
 
 <footer class="mbr-small-footer mbr-section mbr-section-nopadding" id="timeliner-footer">
     <div id="animator-container"><style>
-    #timeliner-footer { background-color: rgb(27,27,27); padding-top:0px; padding-bottom:80px; }
+    #timeliner-footer { position:fixed;left:0;bottom:0;right:0;background-color:rgb(27,27,27);padding-top:0px;padding-bottom:80px; }
     #animator-container {
         position:absolute; bottom:5px; left:10px; right:10px; height:50px; display:block;
         border:1px solid #ffffff;  border-radius:4px; color:#fff; text-align:left; 
