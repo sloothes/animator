@@ -21,16 +21,17 @@ window.anigif_bar = {
                 
                 var div = document.createElement("div");
                 div.id = "anigif_wrapper";
-                div.style.position = "fixed";
-                div.style.right = self.right || "5%";
-                div.style.top = self.top || "5%";
-                div.style.zIndex=99999
+              //div.style.position = "fixed";
+              //div.style.right = self.right || "5%";
+              //div.style.top = self.top || "5%";
+              //div.style.zIndex=99999
                 
                 var htmlworking = self.applyBaseUrl(html)
                 div.innerHTML = htmlworking;
-                document.body.appendChild(div)
+              //document.body.appendChild(div);
+                document.getElementById("recorder-holder").appendChild(div);
                 
-               //prevant global page hooks from hapenning when interacting with anigif
+              //prevant global page hooks from hapenning when interacting with anigif.
                 var preventBubble = function(e) {
                     e.stopPropagation();
                 }
@@ -66,10 +67,10 @@ window.anigif_bar = {
         
         init: function(el) {
             var self = this;
-            this.el = el 
+            this.el = el;
             
-            this.setEnabled({record: true, stop: false, play: false, config: true})
-            this.status("ready")
+            this.setEnabled({record: true, stop: false, play: false, config: true});
+            this.status("ready");
             
             for (var i=0; i<self.buttons.length; i++) {
                 this.el.querySelectorAll("#"+self.buttons[i])[0].onclick = function(e) {
@@ -107,11 +108,11 @@ window.anigif_bar = {
         
         click: function(e) {
             var source = e.target || e.srcElement;  
-            this[source.id](e.target)
+            this[source.id](e.target);
         },
         
         closeConfig: function() {
-            this.el.querySelectorAll("#anigif_settings")[0].style.display = "none"
+            this.el.querySelectorAll("#anigif_settings")[0].style.display = "none";
         },
         
         config: function(el) {
@@ -121,7 +122,7 @@ window.anigif_bar = {
                 style.display = "none";
             }
             else {
-                style.display = "block"
+                style.display = "block";
             }
             
         },
@@ -132,13 +133,13 @@ window.anigif_bar = {
             this.setEnabled({record: false, stop: true, play: false, config: false})
             this.count(self.record_delay, function() {
                 el.className = "blink"
-                self.status("recording...")
+                self.status("recording...");
                 try {
                     window.anigif.startRecord();
                 }
                 catch (e) {
-                    alert(e)
-                    self.init(self.el)
+                    alert(e);
+                    self.init(self.el);
                 }
             })
         },
@@ -172,7 +173,7 @@ window.anigif_bar = {
             this.status("processing...")
             
             self.el.querySelectorAll("#record")[0].className = "";
-            self.setEnabled({record: false, stop: false, play: false, config: false})
+            self.setEnabled({record: false, stop: false, play: false, config: false});
             
             document.body.style.cursor = "wait";
             
@@ -188,7 +189,7 @@ window.anigif_bar = {
                 
                 var end = new Date().getTime();
             	var time = end - start;
-            	console.log("duration: " + time)
+            	console.log("duration: " + time);
             	
             	self.status("done (" + (time/1000).toFixed(2) + "s)");
             	
@@ -210,7 +211,7 @@ window.anigif_bar = {
         },
         
         status: function(txt) {
-            this.el.querySelectorAll("#status")[0].textContent = txt
+            this.el.querySelectorAll("#status")[0].textContent = txt;
         }
 }
 
