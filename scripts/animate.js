@@ -8,7 +8,8 @@
     recording = false;
     encoder = new GIFEncoder();
     encoder.setRepeat(0);   // 0: loop forever, n: loop n times then stop.
-    encoder.setDelay(1000/25); // go to next frame every 40 milliseconds.
+//  encoder.setDelay(1000/25); // go to next frame every 40 milliseconds.
+    encoder.setFrameRate(25);
 
 //  Renderer.
     renderer = new THREE.WebGLRenderer({ 
@@ -37,7 +38,7 @@
         update();
         render();
 
-        if ( encoder && recording ) encoder.addFrame( renderer );
+        if ( encoder && recording ) encoder.addFrame( renderer.domElement );
 
     }
 
