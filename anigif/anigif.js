@@ -235,9 +235,9 @@
             canvas2.width = canvas.width*ratio;
             canvas2.height = canvas.height*ratio;
             var img = new Image();
-            if (self.options.quality=="High");
+            if (self.options.quality=="High")
                 img.src = canvas.toDataURL("image/png");
-            else if (self.options.quality=="Medium");
+            else if (self.options.quality=="Medium")
                 img.src = canvas.toDataURL("image/jpeg", 0.9);
             else img.src = canvas.toDataURL("image/jpeg", 0.1);
 
