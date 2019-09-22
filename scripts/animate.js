@@ -1,5 +1,9 @@
 // animate.js
 
+    var recording = false;
+    var encoder = new GIFEncoder();
+    encoder.setRepeat(0); // 0: loop forever, n: loop n times then stop.
+
     var clock = new THREE.Clock();
     var animatorContainer = $(sceneContainerSelector)[0];
 
@@ -32,12 +36,17 @@
     function render(){
 
         renderer.render( scene, camera );
+
+        if ( recording ) encoder.addFrame( renderer.context );
+
     }
 
     function update() {
 
         var delta = clock.getDelta();
         var time = clock.getElapsedTime();
+
+        encoder.setDelay(delta); // go to next frame every delta milliseconds.
 
     //  keyboard.update( delta );
 
