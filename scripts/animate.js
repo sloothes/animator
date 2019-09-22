@@ -37,7 +37,7 @@
         update();
         render();
 
-        if ( encoder && recording ) encoder.addFrame( renderer.context );
+        if ( encoder && recording ) encoder.addFrame( renderer );
 
     }
 
