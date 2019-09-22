@@ -418,5 +418,25 @@
 <script src="js/animatorController.js"></script>
 <script src="app.js"></script>
 
+<script>
+
+    $("#record-start").on("click", function(){
+
+        recording = !recording;
+
+        if ( recording ) {
+            encoder.start();
+            $(this).text("Stop");
+        } else {
+            encoder.stop();
+            $(this).text("Start");
+        }
+
+    });
+
+</script>
+
+
+
 </body>
 </html>

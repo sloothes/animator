@@ -3,7 +3,7 @@
     recording = false;
     encoder = new GIFEncoder();
     encoder.setRepeat(0);   // 0: loop forever, n: loop n times then stop.
-    encoder.setDelay(1/25); // go to next frame every delta milliseconds.
+    encoder.setDelay(1000/25); // go to next frame every 40 milliseconds.
 
     var clock = new THREE.Clock();
     var animatorContainer = $(sceneContainerSelector)[0];
@@ -29,16 +29,19 @@
     });
 
     function animate(){
+
         requestAnimationFrame( animate );
+
         update();
         render();
+
+        if ( recording ) encoder.addFrame( renderer.context );
+
     }
 
     function render(){
 
         renderer.render( scene, camera );
-
-        if ( recording ) encoder.addFrame( renderer.context );
 
     }
 
