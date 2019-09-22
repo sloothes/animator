@@ -1,6 +1,3 @@
-
-
-
 (function(window, document) {
     
     "use strict";
@@ -64,11 +61,11 @@
         recordFrame: function() {
             var self = this;
             if (!this.continue) return;
-            
-            
+
+
             if (this.options.period=="Offline") {
                 this.frames.push(this.cloneDom(this.el));
-            
+
                 if (this.frames.length>this.options.onlyLastFrames) {
                     this.frames.shift();
                 }
@@ -81,40 +78,40 @@
                     if (self.images.length>self.options.onlyLastFrames) {
                         self.images.shift();
                     }
-                    
+
                     self.progress(++self.totalFrames + " frames");
                 });
             }
-            
-            
+
+
             window.setTimeout(function() {
                 self.recordFrame(this.options);
             }, 1000/this.options.framesPerSecond);
-        
+
         },
         
         getCurrentImage: function(cba) {
-           var self = this;
-           
-           if (this.canvasOnly) {
-               self.resizeImage(self.cloneCanvas(self.el), self.options.ratio, function(err, canvas_small) {
-                   cba(null, canvas_small);    
-               });
-           } else {
-               window.html2canvas( [ self.el ], {
-                   onrendered: function(canvas) {
-                       self.resizeImage(canvas, self.options.ratio, function(err, canvas_small) {
-                           cba(null, canvas_small);    
-                       });
-                   },
-               });
-           }
+            var self = this;
+
+            if (this.canvasOnly) {
+                self.resizeImage(self.cloneCanvas(self.el), self.options.ratio, function(err, canvas_small) {
+                    cba(null, canvas_small);    
+                });
+            } else {
+                window.html2canvas( [ self.el ], {
+                    onrendered: function(canvas) {
+                        self.resizeImage(canvas, self.options.ratio, function(err, canvas_small) {
+                            cba(null, canvas_small);    
+                        });
+                    },
+                });
+            }
         },
-        
+
         cloneDom: function(el) {
-            
+
             var clone;
-            
+
             if (this.canvasOnly) {
                 clone = this.cloneCanvas(el);
             } else {
@@ -125,7 +122,7 @@
                     var newCanvas = this.cloneCanvas(sourceCanvas[i]);
                     cloneCanvas[i].parentElement.replaceChild(newCanvas, cloneCanvas[i]);
                 }
-                
+
                 var sourceVideos = el.getElementsByTagName("video");
                 var cloneVideos = clone.getElementsByTagName("video");
                 for (var i=0; i< sourceVideos.length; i++) {
@@ -134,9 +131,9 @@
                     //document.body.appendChild(videoCanvas);
                 }
             }   
-            
+
             clone.id="unique___"+el.id;
-            
+
             return clone;
         },
         
@@ -197,29 +194,26 @@
 
             var handleImage = function(canvas) {
                 self.resizeImage(canvas, self.options.ratio, function(err, canvas_small) {
-                            self.progress("rendered " + ++self.renderedFrames + "/" + self.frames.length)
-                            self.images.push(canvas_small);
-                            cbx()
-                        })
-            }
+                    self.progress("rendered " + ++self.renderedFrames + "/" + self.frames.length)
+                    self.images.push(canvas_small);
+                    cbx();
+                });
+            };
            
            
-          if (self.canvasOnly) {
-            handleImage(self.frames[i])
-          } else {
-            document.body.appendChild(this.frames[i]);
-            this.replaceSvgWithCanvas(this.frames[i]);
-        
-              window.html2canvas( [ self.frames[i] ], {
-                  onrendered: function(canvas) {
-                      handleImage(canvas);
-                      self.frames[i].parentElement.removeChild(self.frames[i]);
-                  },
-              });    
-          }
+            if (self.canvasOnly) {
+                handleImage(self.frames[i])
+            } else {
+                document.body.appendChild(this.frames[i]);
+                this.replaceSvgWithCanvas(this.frames[i]);
 
-            
-            
+                window.html2canvas( [ self.frames[i] ], {
+                    onrendered: function(canvas) {
+                        handleImage(canvas);
+                        self.frames[i].parentElement.removeChild(self.frames[i]);
+                    },
+                });    
+            }
         },
         
         resizeImage: function(canvas, ratio, cba) {
