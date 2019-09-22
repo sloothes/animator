@@ -30,8 +30,6 @@
         update();
         render();
 
-        if ( encoder && recording ) encoder.addFrame( renderer.domElement );
-
     }
 
     function render(){
