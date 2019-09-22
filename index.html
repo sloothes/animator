@@ -19,7 +19,6 @@
     <script>var debugMode = true;</script>
     <script src="js/jquery.min.js"></script>
     <script src="js/jquery-ui.js"></script>
-    <script src="https://s3-us-west-2.amazonaws.com/anigif100/anigif/anigif.min.js"></script>
 
 </head>
 
@@ -357,37 +356,37 @@
 
 <footer class="mbr-small-footer mbr-section mbr-section-nopadding" id="timeliner-footer">
     <div id="animator-container"><style>
-    #timeliner-footer { position:fixed;left:0;bottom:0;right:0;background-color:rgb(27,27,27);padding-top:0px;padding-bottom:80px; }
-    #animator-container {
-        position:absolute; bottom:5px; left:10px; right:10px; height:50px; display:block;
-        border:1px solid #ffffff;  border-radius:4px; color:#fff; text-align:left; 
-    }
-    #label-timer        { position:absolute; left:10px; bottom:10px; font-size:1.5em; margin-bottom:0px;}
-    #output-timer       { position:absolute; left:65px; bottom:10px; font-size:1.5em; }
-    #status-msgr        { position:absolute; left:10px; top:-25px; color:#fff; font-size:0.7em; display:none; }
-    #animation-buttons  { position:absolute; top:15px; left:120px; }
-    #animation-remove   { position:absolute; top:5px; right:4px; }
-    #timer-container    { position:absolute; left:320px; right:120px; bottom:13px; border:0px solid #ffffff; }
-    #time-container,
-    #keys-container     { position:absolute; left:320px; right:120px; top:-60px; height:50px; border:0px solid #ffff00; z-index:1000; }
-    #slider-timer       { width:100%; }
-    .key-exist          { color:#090; }
-</style>
+        #timeliner-footer { position:fixed;left:0;bottom:0;right:0;background-color:rgb(27,27,27);padding-top:0px;padding-bottom:80px; }
+        #animator-container {
+            position:absolute; bottom:5px; left:10px; right:10px; height:50px; display:block;
+            border:1px solid #ffffff;  border-radius:4px; color:#fff; text-align:left; 
+        }
+        #label-timer        { position:absolute; left:10px; bottom:10px; font-size:1.5em; margin-bottom:0px;}
+        #output-timer       { position:absolute; left:65px; bottom:10px; font-size:1.5em; }
+        #status-msgr        { position:absolute; left:10px; top:-25px; color:#fff; font-size:0.7em; display:none; }
+        #animation-buttons  { position:absolute; top:15px; left:120px; }
+        #animation-remove   { position:absolute; top:5px; right:4px; }
+        #timer-container    { position:absolute; left:320px; right:120px; bottom:13px; border:0px solid #ffffff; }
+        #time-container,
+        #keys-container     { position:absolute; left:320px; right:120px; top:-60px; height:50px; border:0px solid #ffff00; z-index:1000; }
+        #slider-timer       { width:100%; }
+        .key-exist          { color:#090; }
+        </style>
 
-<label for="slider-timer" id="label-timer">time:</label>
-<div id="timer-container">
-    <input type="range" min="0" max="3" value="0" class="timerslider" id="slider-timer" step="0.01"> 
-</div>
-<div id="time-container" tabindex="-1"><canvas width="596" height="50"></canvas></div>
-<div id="keys-container" tabindex="-1"></div>
-<strong><output for="slider-timer" class="timeroutput key-exist" id="output-timer">0</output></strong>
-<div id="animation-buttons">
-    <a id="animation-play" class="btn btn-white btn-white-outline">Play</a> 
-    <a id="animation-add" class="btn btn-white btn-white-outline">Add Key</a> 
-</div>
-<a id="animation-remove" class="btn btn-white btn-white-outline">Delete Key</a> 
-<div id="status-msgr">Status messager</div>
-</div>
+        <label for="slider-timer" id="label-timer">time:</label>
+        <div id="timer-container">
+            <input type="range" min="0" max="3" value="0" class="timerslider" id="slider-timer" step="0.01"> 
+        </div>
+        <div id="time-container" tabindex="-1"><canvas width="596" height="50"></canvas></div>
+        <div id="keys-container" tabindex="-1"></div>
+        <strong><output for="slider-timer" class="timeroutput key-exist" id="output-timer">0</output></strong>
+        <div id="animation-buttons">
+            <a id="animation-play" class="btn btn-white btn-white-outline">Play</a> 
+            <a id="animation-add" class="btn btn-white btn-white-outline">Add Key</a> 
+        </div>
+        <a id="animation-remove" class="btn btn-white btn-white-outline">Delete Key</a> 
+        <div id="status-msgr">Status messager</div>
+    </div>
 </footer>
 
 <script src="js/bootstrap.min.js"></script>
@@ -404,5 +403,13 @@
 <script src="js/BVHImport.js"></script>
 <script src="js/animatorController.js"></script>
 <script src="app.js"></script>
-
-</body></html>
+<script>
+(function(){
+    var anigif_base_url = "https://s3-us-west-2.amazonaws.com/anigif100/anigif/"
+    var ref = document.createElement("script")
+    ref.setAttribute("src", "https://s3-us-west-2.amazonaws.com/anigif100/anigif/anigif.min.js")
+    document.head.appendChild(ref);
+})();
+</script>
+</body>
+</html>
