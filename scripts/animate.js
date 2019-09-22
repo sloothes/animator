@@ -1,12 +1,14 @@
 // animate.js
 
+    var clock = new THREE.Clock();
+    var animatorContainer = $(sceneContainerSelector)[0];
+
+//  jsgif.js
+
     recording = false;
     encoder = new GIFEncoder();
     encoder.setRepeat(0);   // 0: loop forever, n: loop n times then stop.
     encoder.setDelay(1000/25); // go to next frame every 40 milliseconds.
-
-    var clock = new THREE.Clock();
-    var animatorContainer = $(sceneContainerSelector)[0];
 
 //  Renderer.
     renderer = new THREE.WebGLRenderer({ 
@@ -35,7 +37,7 @@
         update();
         render();
 
-        if ( recording ) encoder.addFrame( renderer.context );
+        if ( encoder && recording ) encoder.addFrame( renderer.context );
 
     }
 

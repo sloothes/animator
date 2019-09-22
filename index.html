@@ -425,11 +425,25 @@
         recording = !recording;
 
         if ( recording ) {
-            encoder.start();
             $(this).text("Stop");
         } else {
-            encoder.stop();
             $(this).text("Start");
+        }
+
+        if ( recording ) {
+
+            encoder.start();
+
+        } else if ( !recording ) {
+
+            encoder.finish();
+
+            var binary_gif = encoder.stream().getData();
+            var data_url = "data:image/gif;base64," + encode64(binary_gif);
+            window.open(data_url);
+
+            debugMode && console.log(data_url);
+
         }
 
     });
