@@ -191,7 +191,7 @@
                     <div class="slider-row" style="font-size:1.3em; margin-top:15px; margin-bottom:15px;">Recording:</div>
                     <div id="record-buttons">
                         <a id="record-start" class="btn btn-white btn-white-outline">Start</a>
-                        <a id="record-play"  class="btn btn-white btn-white-outline">Play</a>
+                        <a id="record-play"  class="btn btn-white btn-white-outline">Play Once</a>
                         <a id="record-save"  class="btn btn-white btn-white-outline">Save</a>
                     </div>
                 </div>
@@ -424,7 +424,7 @@
         format: "gif", 
         workersPath: "js/",
         framerate: 25,
-        verbose: false,
+        verbose: debugMode,
     });
 
     debugMode && console.log( capturer );
@@ -446,7 +446,7 @@
                 format: "gif", 
                 workersPath: "js/",
                 framerate: 25,
-                verbose: false,
+                verbose: debugMode,
             });
 
             debugMode && console.log( capturer );
@@ -461,13 +461,75 @@
             $(this).text("Start");
         //  renderer.context.viewport(0, 0, w, h);
 
+            capturer.save();
+
         }
 
     });
 
     $("#record-play").on("click", function(){
 
-        window.open();
+        if ( !animation ) return;
+        if ( capturer ) capturer.stop();
+
+        var w = renderer.context.drawingBufferWidth; 
+        var h = renderer.context.drawingBufferHeight;
+        var x = w/2 - w/4; var y = h/2 - h/4;
+
+        animation.timeScale = 0;
+        timescaleSlider.value = 0;
+        timescaleOutput.value = 0;
+        animation.currentTime = 0;
+        animtimerSlider.value = 0;
+        animtimerOutput.value = 0;
+        loopCheckbox.checked  = false;
+
+        ensureLooping();
+        ensureKeysIndexing();
+
+        recording = true;
+
+        capturer = new CCapture({ 
+            format: "gif", 
+            workersPath: "js/",
+            framerate: round(fpsSlider.value, 0),
+            verbose: debugMode,
+        });
+
+        currentSpeed = 1;
+        timescaleSlider.value = currentSpeed;
+        timescaleOutput.value = currentSpeed;
+
+        capturer.start();
+        animation.play(0);
+
+
+/*
+        if (this.innerHTML == "Play"){
+            ensureLooping();
+            ensureKeysIndexing();
+            timescaleSlider.value = currentSpeed;
+            timescaleOutput.value = currentSpeed;
+            animation.play(animation.currentTime);
+            animtimerSlider.value = animation.currentTime;
+            this.innerHTML = "Pause";
+            $(statusMsgrSelector).text("Playing...");
+            $(statusMsgrSelector)[0].style.display = "block";
+            console.log("Animation is playing.");
+        }
+        
+        else if (this.innerHTML == "Pause"){
+            timescaleSlider.value = 0;
+            timescaleOutput.value = currentSpeed;
+            animtimerSlider.value = animation.currentTime;
+            this.innerHTML = "Play";
+            console.log("animation.data:", animation.data);
+            $(statusMsgrSelector).text("Paused");
+            $(statusMsgrSelector)[0].style.display = "block";
+            console.log("Animation paused.");
+        }
+*/
+
 
     });
 

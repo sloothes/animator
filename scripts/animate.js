@@ -32,7 +32,13 @@
         update();
         render();
 
-        if ( capturer && recording ) capturer.capture( renderer.domElement );
+        if ( capturer && recording ) {
+            capturer.capture( renderer.domElement );
+            if ( !animation.loop && !animation.isPlaying ) {
+                capturer.stop();
+                recording = false;
+            }
+        }
 
     }
 
