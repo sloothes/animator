@@ -1,5 +1,7 @@
 // animate.js
 
+    recording = false;
+
     var clock = new THREE.Clock();
     var animatorContainer = $(sceneContainerSelector)[0];
 
