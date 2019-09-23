@@ -416,10 +416,10 @@
 
 <script>
 
-    recording = false;
-
 //  Create a capturer that exports an animated GIF.
 //  Notices you have to specify the path to the gif.worker.js.
+
+    var recording = false;
 
     var capturer = new CCapture({ 
         format: "gif", 
@@ -427,6 +427,8 @@
         framerate: 30,
         verbose: true,
     });
+
+    console.log( capturer );
 
     $("#record-start").on("click", function(){
 
