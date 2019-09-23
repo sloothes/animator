@@ -32,7 +32,7 @@
         update();
         render();
 
-        if ( recording ) capturer.capture( renderer.domElement );
+        if ( capturer && recording ) capturer.capture( renderer.domElement );
 
     }
 
