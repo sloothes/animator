@@ -432,6 +432,13 @@
 
     var capturer;
 
+    $("#record-save").on("click", function(){
+
+        if ( capturer ) capturer.save();
+
+    });
+
+
     $("#record-start").on("click", function(){
 
         recording = !recording;
@@ -467,16 +474,18 @@
 
     });
 
+
     $("#record-play").on("click", function(){
 
         if ( !animation ) return;
         if ( capturer ) capturer.stop();
 
+        animation.timeScale = 0;  // important!
+
         var w = renderer.context.drawingBufferWidth; 
         var h = renderer.context.drawingBufferHeight;
         var x = w/2 - w/4; var y = h/2 - h/4;
 
-        animation.timeScale = 0;
         timescaleSlider.value = 0;
         timescaleOutput.value = 0;
         animation.currentTime = 0;
@@ -503,6 +512,7 @@
         capturer.start();
         animation.play(0);
 
+    });
 
 /*
         if (this.innerHTML == "Play"){
@@ -530,25 +540,7 @@
         }
 */
 
-
-    });
-
-    $("#record-save").on("click", function(){
-
-        capturer.save();
-
-    });
-
 </script>
-
-
-
-
-
-
-
-
-
 
                 <!-- jsgif -->
 <!--

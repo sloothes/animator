@@ -34,9 +34,9 @@
 
         if ( capturer && recording ) {
             capturer.capture( renderer.domElement );
-            if ( !animation.loop && !animation.isPlaying ) {
+            if ( animation && !animation.loop && !animation.timeScale ) {
+                recording = false; // important!
                 capturer.stop();
-                recording = false;
             }
         }
 
