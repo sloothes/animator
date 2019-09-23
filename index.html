@@ -434,12 +434,20 @@
 
         recording = !recording;
 
+        var restore = {
+            w: renderer.context.drawingBufferWidth,
+            h: renderer.context.drawingBufferWidth,
+        };
+
         if ( recording ) {
-            capturer.start();
+            renderer.context.viewport(0, 0, 480, 320 );
             $(this).text("Stop");
+            capturer.start();
         } else {
             capturer.stop();
             $(this).text("Start");
+            renderer.context.viewport(0, 0, restore.w, restore.h);
+            capturer.save();
         }
 
     });
