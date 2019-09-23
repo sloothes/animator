@@ -423,7 +423,7 @@
 
     var capturer = new CCapture({ 
         format: "gif", 
-        workersPath: "js/",
+        workersPath: "gif-workers/",
         framerate: 25,
         verbose: true,
     });
@@ -434,20 +434,24 @@
 
         recording = !recording;
 
-        var restore = {
-            w: renderer.context.drawingBufferWidth,
-            h: renderer.context.drawingBufferWidth,
+        var s = {
+            width: renderer.context.drawingBufferWidth,
+            height: renderer.context.drawingBufferHeight,
         };
 
+        var width = 480; var height = 320;
+        var x = renderer.context.drawingBufferWidth/2 - width/2;
+        var y = renderer.context.drawingBufferHeight/2 - height/2;
+
+
         if ( recording ) {
-            renderer.context.viewport(0, 0, 480, 320 );
+            renderer.context.viewport( x, y, width, height );
             $(this).text("Stop");
             capturer.start();
         } else {
             capturer.stop();
             $(this).text("Start");
-            renderer.context.viewport(0, 0, restore.w, restore.h);
-            capturer.save();
+            renderer.context.viewport(0, 0, s.width, s.height);
         }
 
     });
