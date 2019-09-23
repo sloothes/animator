@@ -434,6 +434,8 @@
 
     $("#record-save").on("click", function(){
 
+        recording = false;
+
         if ( capturer ) {
             capturer.stop();
             capturer.save();
@@ -471,7 +473,7 @@
             $(this).text("Start");
         //  renderer.context.viewport(0, 0, w, h);
 
-        //  capturer.save();
+            capturer.save();
 
         }
 
@@ -480,10 +482,11 @@
 
     $("#record-play").on("click", function(){
 
-        if ( !animation ) return;
+        recording = false;
         if ( capturer ) capturer.stop();
-        if ( recording ) recording = false;
         $("#record-start").text("Start");
+
+        if ( !animation ) return;
 
         animation.timeScale = 0;  // important!
 
