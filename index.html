@@ -20,14 +20,6 @@
     <script src="js/jquery.min.js"></script>
     <script src="js/jquery-ui.js"></script>
 
-                <!-- jsgif -->
-<!--
-    <script src="jsgif/LZWEncoder.js"></script>
-    <script src="jsgif/NeuQuant.js"></script>
-    <script src="jsgif/GIFEncoder.js"></script>
-    <script src="jsgif/b64.js"></script>
--->
-
 </head>
 
 
@@ -195,7 +187,6 @@
 
                 <div id="recorder-holder"></div>
 
-            <!--
                 <div id="record-holder" style="height:87px;">
                     <div class="slider-row" style="font-size:1.3em; margin-top:15px; margin-bottom:15px;">Recording:</div>
                     <div id="record-buttons">
@@ -204,7 +195,6 @@
                         <a id="record-save"  class="btn btn-white btn-white-outline">Save</a>
                     </div>
                 </div>
-            -->
 
             </div>
         </div>
@@ -422,13 +412,66 @@
 <script src="js/animatorController.js"></script>
 <script src="app.js"></script>
 
+<script src="CCapture.all.min.js"></script>
+
 <script>
-//  GifW00t.js
-    var anigif_base_url = "/animator/anigif/"; // important!
+
+    recording = false;
+
+//  Create a capturer that exports an animated GIF.
+//  Notices you have to specify the path to the gif.worker.js.
+
+    var capturer = new CCapture({ 
+        format: "gif", 
+        workersPath: "js/",
+        framerate: 30,
+        verbose: true,
+    });
+
+    $("#record-start").on("click", function(){
+
+        recording = !recording;
+
+        if ( recording ) {
+            capturer.start();
+            $(this).text("Stop");
+        } else {
+            capturer.stop();
+            $(this).text("Start");
+        }
+
+    });
+
+    $("#record-play").on("click", function(){
+
+        window.open();
+
+    });
+
+    $("#record-save").on("click", function(){
+
+        capturer.save();
+
+    });
+
 </script>
 
-<script src="/animator/anigif/anigif.js"></script>
-<script src="/animator/anigif/bar.js"></script>
+
+
+
+
+
+
+
+
+
+                <!-- jsgif -->
+<!--
+    <script src="jsgif/LZWEncoder.js"></script>
+    <script src="jsgif/NeuQuant.js"></script>
+    <script src="jsgif/GIFEncoder.js"></script>
+    <script src="jsgif/b64.js"></script>
+-->
 
 <script>
 /*
@@ -469,8 +512,6 @@
     });
 */
 </script>
-
-
 
 </body>
 </html>

@@ -30,11 +30,13 @@
         update();
         render();
 
+        if ( recording ) capturer.capture( renderer.domElement );
+
     }
 
     function render(){
 
-        renderer.render( scene, camera );
+        renderer.render( scene, camera ); // CCapture.js
 
     }
 
