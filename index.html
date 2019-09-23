@@ -418,34 +418,36 @@
 
 //  Create a capturer that exports an animated GIF.
 //  Notices you have to specify the path to the gif.worker.js.
-
+/*
 //  var recording = false;
     var capturer = new CCapture({ 
         format: "gif", 
         workersPath: "js/",
         framerate: 25,
-        verbose: true,
+        verbose: false,
     });
 
     debugMode && console.log( capturer );
+*/
 
     $("#record-start").on("click", function(){
 
-        recording = !recording;
+        capturer = new CCapture({ 
+            format: "gif", 
+            workersPath: "js/",
+            framerate: 25,
+            verbose: false,
+        });
 
-     //   var s = {
-     //       width: renderer.context.drawingBufferWidth,
-     //       height: renderer.context.drawingBufferHeight,
-     //   };
+        recording = !recording;
 
         var w = renderer.context.drawingBufferWidth; 
         var h = renderer.context.drawingBufferHeight;
         var x = w/2 - w/4; var y = h/2 - h/4;
 
-
         if ( recording ) {
 
-            renderer.context.viewport( x, y, w/2, h/2 );
+        //  renderer.context.viewport( x, y, w/2, h/2 );
             $(this).text("Stop");
             capturer.start();
 
@@ -453,7 +455,7 @@
 
             capturer.stop();
             $(this).text("Start");
-            renderer.context.viewport(0, 0, w, h);
+        //  renderer.context.viewport(0, 0, w, h);
 
         }
 
