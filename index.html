@@ -434,13 +434,6 @@
 
     $("#record-start").on("click", function(){
 
-        capturer = new CCapture({ 
-            format: "gif", 
-            workersPath: "js/",
-            framerate: 25,
-            verbose: false,
-        });
-
         recording = !recording;
 
         var w = renderer.context.drawingBufferWidth; 
@@ -448,6 +441,15 @@
         var x = w/2 - w/4; var y = h/2 - h/4;
 
         if ( recording ) {
+
+            capturer = new CCapture({ 
+                format: "gif", 
+                workersPath: "js/",
+                framerate: 25,
+                verbose: false,
+            });
+
+            debugMode && console.log( capturer );
 
         //  renderer.context.viewport( x, y, w/2, h/2 );
             $(this).text("Stop");
