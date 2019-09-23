@@ -433,19 +433,19 @@
 
         recording = !recording;
 
-        var s = {
-            width: renderer.context.drawingBufferWidth,
-            height: renderer.context.drawingBufferHeight,
-        };
+     //   var s = {
+     //       width: renderer.context.drawingBufferWidth,
+     //       height: renderer.context.drawingBufferHeight,
+     //   };
 
-        var width = 480; var height = 320;
-        var x = renderer.context.drawingBufferWidth/2 - width/2;
-        var y = renderer.context.drawingBufferHeight/2 - height/2;
+        var w = renderer.context.drawingBufferWidth; 
+        var h = renderer.context.drawingBufferHeight;
+        var x = w/2 - w/4; var y = h/2 - h/4;
 
 
         if ( recording ) {
 
-            renderer.context.viewport( x, y, width, height );
+            renderer.context.viewport( x, y, w/2, h/2 );
             $(this).text("Stop");
             capturer.start();
 
@@ -453,7 +453,7 @@
 
             capturer.stop();
             $(this).text("Start");
-            renderer.context.viewport(0, 0, s.width, s.height);
+            renderer.context.viewport(0, 0, w, h);
 
         }
 
