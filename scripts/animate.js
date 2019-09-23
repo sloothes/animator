@@ -37,6 +37,7 @@
             if ( animation && !animation.loop && !animation.timeScale ) {
                 recording = false; // important!
                 capturer.stop();
+                capturer.save();
             }
         }
 
