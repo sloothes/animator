@@ -35,6 +35,9 @@
             scene.add(avatar);
             skins.push(avatar);
             console.log("Avatar loaded:", avatar);
+
+			if (controls) controls.focus(avatar, true);
+
         //
             armatureHelper = new SkeletonHelper(avatar);
             scene.add(armatureHelper);
