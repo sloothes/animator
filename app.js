@@ -78,7 +78,7 @@
     var skins = [];
 
     var fontPath = "three/fonts/helvetiker_regular.typeface.json";
-    var meshPath = "models/riggid-design-doll-female-v0.4.1.json";
+    var meshPath = "models/MannyTheSkeletonDefaultRigged_v04.json";
 
 
 
