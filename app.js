@@ -78,7 +78,7 @@
     var skins = [];
 
     var fontPath = "three/fonts/helvetiker_regular.typeface.json";
-    var meshPath = "models/MannyTheSkeletonDefaultRigged_v04.json";
+    var meshPath = "models/SkeletonFBK07v1.json";
 
 
 
